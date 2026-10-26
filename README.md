@@ -18,6 +18,7 @@ dbt Core — mart models (star schema: dim_hospital, dim_drg, fct_hospital_charg
         ↓
 Power BI Desktop — dashboard (native Snowflake connector, read-only role)
 
+
 ## Tech Stack
 - **Data Source:** CMS Medicare Inpatient Hospitals by Provider and Service (2022-2024)
 - **Warehouse:** Snowflake (X-Small warehouse, 60s auto-suspend)
