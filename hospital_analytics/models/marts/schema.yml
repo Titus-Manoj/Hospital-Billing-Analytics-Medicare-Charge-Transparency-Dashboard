@@ -1,0 +1,43 @@
+version: 2
+
+models:
+  - name: dim_hospital
+    description: "One row per hospital"
+    columns:
+      - name: provider_ccn
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_drg
+    description: "One row per diagnosis category (DRG)"
+    columns:
+      - name: drg_code
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_hospital_charges
+    description: "Fact table — one row per hospital + DRG + year"
+    columns:
+      - name: provider_ccn
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_hospital')
+              field: provider_ccn
+
+      - name: drg_code
+        tests:
+          - not_null
+          - relationships:
+              to: ref('dim_drg')
+              field: drg_code
+
+      - name: discharge_year
+        tests:
+          - not_null
+
+      - name: markup_ratio
+        tests:
+          - not_null

@@ -1,0 +1,33 @@
+version: 2
+
+models:
+  - name: stg_inpatient__unioned
+    description: "Cleaned, unioned inpatient billing data across 2022-2024"
+    columns:
+      - name: provider_ccn
+        description: "Hospital's Medicare provider ID"
+        tests:
+          - not_null
+
+      - name: drg_code
+        description: "Diagnosis Related Group code"
+        tests:
+          - not_null
+
+      - name: discharge_year
+        tests:
+          - not_null
+          - accepted_values:
+              values: [2022, 2023, 2024]
+
+      - name: total_discharges
+        tests:
+          - not_null
+
+      - name: avg_submitted_charge
+        tests:
+          - not_null
+
+      - name: avg_medicare_payment
+        tests:
+          - not_null

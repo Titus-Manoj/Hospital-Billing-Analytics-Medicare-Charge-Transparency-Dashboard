@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw
+    database: hospital_analytics
+    schema: raw
+    tables:
+      - name: inpatient_2022
+      - name: inpatient_2023
+      - name: inpatient_2024
