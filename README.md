@@ -1,4 +1,5 @@
 # Hospital-Billing-Analytics-Medicare-Charge-Transparency-Dashboard
+
 nalyzing $0-cost, publicly available CMS data to reveal how much hospitals bill  versus what Medicare actually pays — built end-to-end with Snowflake, dbt, and Power BI
 
 ## Problem Statement:
@@ -38,7 +39,8 @@ Power BI Desktop — dashboard (native Snowflake connector, read-only role)
 - Read-only Snowflake role (bi_reader) used for the BI connection — 
   least-privilege access, no write/raw-schema access from Power BI
 
-
+## Dashboard Preview
+A<img width="1046" height="581" alt="1789688471772_image" src="https://github.com/user-attachments/assets/a321df9a-e431-4961-8118-ad302968e3b0" />
 
 ## Skills Demonstrated
 - End-to-end analytics engineering: raw data → warehouse → transformation → BI
